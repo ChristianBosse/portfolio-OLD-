@@ -1,62 +1,67 @@
 import React from "react";
-import landingVideo from "../Media/landingpage.mp4";
 import styled from "styled-components";
 import Typist from "react-typist";
-import Particles from "react-particles-js";
+import Wave from "react-wavify";
 
 const Welcome = () => {
   return (
     <>
-      {/* <Video autoPlay loop muted>
-        <source src={landingVideo} type="video/mp4" /> */}
-      <Particles />
-      <WelcomeText>
-        <Typist cursor={{ hideWhenDone: true }}>
-          Hello, my name is Christian Bosse.
-          <Typist.Delay ms={1000} />
-          <br />
-          Welcome to my amaz
+      <Wrapper>
+        <FirstText>
+          Hello, I'm <span style={{ color: "#e63946" }}>Christian Bosse</span>
+        </FirstText>
+
+        <Typist cursor={{ hideWhenDone: true }} style={{ maxHeight: "29px" }}>
           <Typist.Delay ms={0} />
-          nig
-          <Typist.Backspace count={3} delay={800} />
-          <Typist.Delay ms={600} />
-          ing Website!
-          <Typist.Delay ms={1000} />
-          <br />
-          Im a Full-Stack Web Developer and love using
-          <Typist.Delay ms={500} />
-          <br />
-          React, CSS, Style-Components, Node.js, etc,
-          <Typist.Delay ms={500} />
-          <br />
-          to make my website come to live.
-          <Typist.Delay ms={1250} />
-          <br />
-          My Favorite hobby's are gaming and admiring nature.
-          <Typist.Delay ms={1250} />
-          <br />
-          You can check my <span className="flash">project</span> and{" "}
-          <span className="flash">contact</span> info below.
+          <SecondText>
+            A <span style={{ color: "#e63946" }}>Full-Stack Web Developer</span>{" "}
+            graduated from the Concordia University.
+          </SecondText>
         </Typist>
-      </WelcomeText>
-      {/* </Video> */}
+      </Wrapper>
+      <Wave
+        fill="#FFF"
+        paused={false}
+        options={{
+          height: 30,
+          amplitude: 25,
+          speed: 0.25,
+          points: 6,
+        }}
+        style={{
+          zIndex: 3,
+          position: "relative",
+          top: "70vh",
+          maxWidth: "100vw",
+        }}
+      />
     </>
   );
 };
 
-const Video = styled.video`
-  min-width: 100%;
-  max-height: 100vh;
-  object-fit: cover;
-  filter: brightness(0.5);
-  z-index: 0;
-`;
-
-const WelcomeText = styled.div`
-  z-index: 1;
+const Wrapper = styled.div`
+  min-width: 99.999%;
+  max-width: 99.999%;
+  height: 80vh;
+  background-color: #14213d;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  position: absolute;
+`;
+
+const FirstText = styled.p`
+  color: #f1faee;
+  font-size: 3em;
+  margin-bottom: 1em;
+  font-weight: bold;
+`;
+
+const SecondText = styled.span`
+  color: #f1faee;
+  font-size: 1.5em;
+  font-weight: bold;
 `;
 
 export default Welcome;
