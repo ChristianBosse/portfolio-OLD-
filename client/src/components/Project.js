@@ -13,7 +13,12 @@ const Project = () => {
           <p>Concordia University Final Project</p>
           <p>React / Styled-components / Express / Node.js / MongoDB </p>
         </Card>
-        <Card></Card>
+        <Card>
+          <Image src={ApexTracker} />
+          <p>Apex Legend Tracker</p>
+          <p>Concordia University Final Project</p>
+          <p>React / Styled-components / Express / Node.js / MongoDB </p>
+        </Card>
       </Wrapper>
     </>
   );
