@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ApexTracker from "../Media/apexTracker.jpg";
+import myWebsite from "../Media/mywebsite.png";
 
 const Project = () => {
   return (
@@ -9,15 +10,19 @@ const Project = () => {
       <Wrapper>
         <Card>
           <Image src={ApexTracker} alt="my first project" />
-          <ProjectTitle>Apex Legend Tracker</ProjectTitle>
+          <ProjectTitle href="https://github.com/ChristianBosse/Apex-Tracker">
+            Apex Legend Tracker
+          </ProjectTitle>
           <ProjectDesc>Concordia University Final Project</ProjectDesc>
           <ProjectLang>
             React / Styled-components / Express / Node.js / MongoDB{" "}
           </ProjectLang>
         </Card>
         <Card>
-          <Image src={ApexTracker} />
-          <ProjectTitle>My Website</ProjectTitle>
+          <Image src={myWebsite} />
+          <ProjectTitle href="https://christianbosse.ca/">
+            My Website
+          </ProjectTitle>
           <ProjectDesc>
             My Personal Website. The very one you are on!
           </ProjectDesc>
@@ -56,12 +61,16 @@ const Image = styled.img`
   width: 100%;
 `;
 
-const ProjectTitle = styled.p`
+const ProjectTitle = styled.a`
   font-size: 2em;
   color: #14213d;
-  margin-bottom: 0.5em;
+
+  text-decoration: none;
   @media only screen and (max-width: 1000px) {
     font-size: 1.2em;
+  }
+  &:hover {
+    color: red;
   }
 `;
 
