@@ -30,7 +30,7 @@ const Project = () => {
 
 const Wrapper = styled.div`
   height: 100vh;
-  min-width: 100vw;
+  min-width: 99.999%;
   background-color: white;
   position: absolute;
   top: 85vh;

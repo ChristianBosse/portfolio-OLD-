@@ -7,7 +7,9 @@ const Header = () => {
       <Head>
         <Name>CB</Name>
         <Wrapper>
-          <Link></Link>
+          <LinkText>Home</LinkText>
+          <LinkText>Experience</LinkText>
+          <LinkText>Contact</LinkText>
         </Wrapper>
       </Head>
     </>
@@ -22,16 +24,21 @@ const Head = styled.div`
 
 const Name = styled.span`
   padding: 10px;
-
   font-weight: lighter;
   font-size: 1.5em;
   color: #e63946;
   display: flex;
   align-content: center;
+  justify-content: flex-start;
 `;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
 
-const Link = styled.span``;
+const LinkText = styled.p`
+  color: white;
+`;
 
 export default Header;
