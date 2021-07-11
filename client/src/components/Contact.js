@@ -1,8 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 import Wave from "react-wavify";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "gmail",
+        "template_couprq9",
+        e.target,
+        "user_crG8QptGSQuA3QDSDiVJN"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
+
   return (
     <>
       <Wrapper>
@@ -16,13 +37,86 @@ const Contact = () => {
             points: 6,
           }}
         />
-        <ContactUs></ContactUs>
+        <ContactUs>
+          <Form onSubmit={sendEmail}>
+            <GetInTouch>Get in Touch!</GetInTouch>
+            <Name type="text" placeholder="Name" name="name" />
+            <Email type="text" placeholder="Email" name="email" />
+            <Message
+              cols="30"
+              rows="8"
+              placeholder="Your message"
+              name="message"
+            />
+          </Form>
+        </ContactUs>
       </Wrapper>
     </>
   );
 };
 
 const Wrapper = styled.div``;
+
+const GetInTouch = styled.p`
+  font-size: 3em;
+  margin-bottom: 1.5em;
+  font-weight: bold;
+  color: white;
+`;
+
+const Name = styled.input`
+  margin-bottom: 2em;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 4em;
+  width: 20em;
+  border-radius: 0.7em;
+  border: solid white 1px;
+  color: white;
+
+  ::placeholder {
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+  }
+`;
+
+const Email = styled.input`
+  margin-bottom: 2em;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 4em;
+  width: 20em;
+  border-radius: 0.7em;
+  border: solid white 1px;
+  color: white;
+
+  ::placeholder {
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+  }
+`;
+
+const Message = styled.textarea`
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 12em;
+  width: 20em;
+  border-radius: 0.7em;
+  border: solid white 1px;
+  color: white;
+
+  ::placeholder {
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+  }
+`;
+
+const Form = styled.form`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const ContactUs = styled.div`
   position: absolute;
@@ -31,7 +125,9 @@ const ContactUs = styled.div`
   min-width: 99.999%;
   height: 80vh;
   background-color: #14213d;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media screen and (max-width: 360px) {
     top: 330vh;
   }
