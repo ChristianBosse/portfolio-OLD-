@@ -2,6 +2,7 @@ import React from "react";
 import Welcome from "./Welcome";
 import Header from "./Header";
 import Project from "./Project";
+import Contact from "./Contact";
 
 const MainPage = () => {
   return (
@@ -9,6 +10,7 @@ const MainPage = () => {
       <Header />
       <Welcome />
       <Project />
+      <Contact />
     </>
   );
 };
