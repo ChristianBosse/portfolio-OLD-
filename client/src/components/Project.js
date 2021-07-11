@@ -64,7 +64,8 @@ const Image = styled.img`
 const ProjectTitle = styled.a`
   font-size: 2em;
   color: #14213d;
-
+  display: inline-block;
+  margin-bottom: 0.5em;
   text-decoration: none;
   @media only screen and (max-width: 1000px) {
     font-size: 1.2em;
