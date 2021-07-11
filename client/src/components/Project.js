@@ -9,15 +9,19 @@ const Project = () => {
       <Wrapper>
         <Card>
           <Image src={ApexTracker} alt="my first project" />
-          <p>Apex Legend Tracker</p>
-          <p>Concordia University Final Project</p>
-          <p>React / Styled-components / Express / Node.js / MongoDB </p>
+          <ProjectTitle>Apex Legend Tracker</ProjectTitle>
+          <ProjectDesc>Concordia University Final Project</ProjectDesc>
+          <ProjectLang>
+            React / Styled-components / Express / Node.js / MongoDB{" "}
+          </ProjectLang>
         </Card>
         <Card>
           <Image src={ApexTracker} />
-          <p>Apex Legend Tracker</p>
-          <p>Concordia University Final Project</p>
-          <p>React / Styled-components / Express / Node.js / MongoDB </p>
+          <ProjectTitle>My Website</ProjectTitle>
+          <ProjectDesc>
+            My Personal Website. The very one you are on!
+          </ProjectDesc>
+          <ProjectLang>React / Styled-components</ProjectLang>
         </Card>
       </Wrapper>
     </>
@@ -33,23 +37,46 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 1000px) {
     flex-direction: column;
   }
   @media only screen and (max-height: 839px) {
-    height: 190vh;
+    height: 260vh;
   }
   @media only screen and (max-height: 568px) {
-    height: 220vh;
+    height: 300vh;
   }
   @media only screen and (min-height: 1024px) {
-    height: 80vh;
+    height: 135vh;
   }
 `;
 
 const Image = styled.img`
-  height: 80%;
+  height: 70%;
   width: 100%;
+`;
+
+const ProjectTitle = styled.p`
+  font-size: 2em;
+  color: #14213d;
+  margin-bottom: 0.5em;
+  @media only screen and (max-width: 1000px) {
+    font-size: 1.2em;
+  }
+`;
+
+const ProjectDesc = styled.p`
+  margin-bottom: 2em;
+  @media only screen and (max-width: 1000px) {
+    font-size: 0.8em;
+  }
+`;
+
+const ProjectLang = styled.p`
+  color: red;
+  @media only screen and (max-width: 1000px) {
+    font-size: 0.8em;
+  }
 `;
 
 const Text = styled.p`
@@ -70,6 +97,7 @@ const Card = styled.div`
   border: 1px #14213d solid;
   border-bottom: 3px #14213d solid;
   transition-duration: 0.5s;
+
   &:hover {
     transform: scale(1.05);
   }
@@ -94,35 +122,37 @@ const Card = styled.div`
     width: 28em;
   }
   @media only screen and (max-width: 1000px) {
-    height: 26em;
+    height: 28em;
     width: 26em;
+    margin-bottom: 4em;
   }
   @media only screen and (max-width: 900px) {
-    height: 24em;
+    height: 28em;
     width: 24em;
+    margin-bottom: 4em;
   }
   @media only screen and (max-width: 800px) {
-    height: 20em;
+    height: 28em;
     width: 20em;
   }
   @media only screen and (max-width: 700px) {
-    height: 18em;
+    height: 28em;
     width: 18em;
   }
   @media only screen and (max-width: 600px) {
-    height: 18em;
+    height: 28em;
     width: 18em;
   }
   @media only screen and (max-width: 500px) {
-    height: 18em;
+    height: 28em;
     width: 18em;
   }
   @media only screen and (max-width: 400px) {
-    height: 18em;
+    height: 28em;
     width: 18em;
   }
   @media only screen and (max-width: 300px) {
-    height: 12em;
+    height: 28em;
     width: 12em;
   }
   @media only screen and (max-width: 200px) {
