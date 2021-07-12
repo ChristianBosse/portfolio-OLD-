@@ -37,8 +37,8 @@ const Wrapper = styled.div`
   justify-content: flex-end;
 `;
 
-const LinkText = styled.p`
-  color: white;
-`;
+// const LinkText = styled.p`
+//   color: white;
+// `;
 
 export default Header;
