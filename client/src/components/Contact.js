@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Wave from "react-wavify";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
+  const [contactSuccess, setContactSuccess] = useState(false);
   function sendEmail(e) {
     e.preventDefault();
 
@@ -17,6 +18,7 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setContactSuccess((e) => !e);
         },
         (error) => {
           console.log(error.text);
@@ -24,6 +26,12 @@ const Contact = () => {
       );
     e.target.reset();
   }
+  const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+  const CheckSuccess = async () => {
+    await delay(5000);
+    setContactSuccess(false);
+  };
 
   return (
     <>
@@ -50,7 +58,17 @@ const Contact = () => {
               name="message"
               required
             />
-            <SubmitBtn type="submit" value="Get in Touch" />
+
+            <SubmitBtn
+              onClick={CheckSuccess}
+              type="submit"
+              value="Get in Touch"
+            />
+            {contactSuccess ? (
+              <Success>Your Email has been sent!</Success>
+            ) : (
+              <></>
+            )}
           </Form>
         </ContactUs>
       </Wrapper>
@@ -59,6 +77,13 @@ const Contact = () => {
 };
 
 const Wrapper = styled.div``;
+
+const Success = styled.p`
+  color: green;
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+`;
 
 const SubmitBtn = styled.input`
   width: 11.5em;
@@ -81,7 +106,7 @@ const SubmitBtn = styled.input`
     background-position: -100% 0;
   }
   &:focus {
-    border: none;
+    border: solid rgb(230, 57, 70) 1px;
   }
 `;
 

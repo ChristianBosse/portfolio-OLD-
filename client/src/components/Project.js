@@ -63,6 +63,8 @@ const Image = styled.img`
 
 const ProjectTitle = styled.a`
   font-size: 2em;
+  font-weight: bold;
+  margin-left: 0.5em;
   color: #14213d;
   display: inline-block;
   margin-bottom: 0.5em;
@@ -77,6 +79,7 @@ const ProjectTitle = styled.a`
 
 const ProjectDesc = styled.p`
   margin-bottom: 2em;
+  margin-left: 0.8em;
   @media only screen and (max-width: 1000px) {
     font-size: 0.8em;
   }
@@ -84,6 +87,7 @@ const ProjectDesc = styled.p`
 
 const ProjectLang = styled.p`
   color: red;
+  margin-left: 0.8em;
   @media only screen and (max-width: 1000px) {
     font-size: 0.8em;
   }
