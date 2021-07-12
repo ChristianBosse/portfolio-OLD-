@@ -19,8 +19,8 @@ const Welcome = () => {
           </SecondText>
         </Typist>
       </Wrapper>
-      <Wave
-        fill="#FFF"
+      <TheWave
+        fill="#14213d"
         paused={false}
         options={{
           height: 30,
@@ -28,16 +28,18 @@ const Welcome = () => {
           speed: 0.25,
           points: 6,
         }}
-        style={{
-          zIndex: 3,
-          position: "relative",
-          top: "70vh",
-          maxWidth: "100vw",
-        }}
       />
     </>
   );
 };
+
+const TheWave = styled(Wave)`
+  z-index: 3;
+  position: relative;
+  bottom: 1vh;
+  max-width: 100vw;
+  transform: rotate(180deg);
+`;
 
 const Wrapper = styled.div`
   min-width: 99.999%;
@@ -48,7 +50,6 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: absolute;
 `;
 
 const FirstText = styled.p`

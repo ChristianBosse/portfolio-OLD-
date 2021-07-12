@@ -7,9 +7,9 @@ const Header = () => {
       <Head>
         <Name>CB</Name>
         <Wrapper>
-          <LinkText>Home</LinkText>
+          {/* <LinkText>Home</LinkText>
           <LinkText>Experience</LinkText>
-          <LinkText>Contact</LinkText>
+          <LinkText>Contact</LinkText> */}
         </Wrapper>
       </Head>
     </>
