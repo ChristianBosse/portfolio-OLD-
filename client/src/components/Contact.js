@@ -22,6 +22,7 @@ const Contact = () => {
           console.log(error.text);
         }
       );
+    e.target.reset();
   }
 
   return (
@@ -40,14 +41,16 @@ const Contact = () => {
         <ContactUs>
           <Form onSubmit={sendEmail}>
             <GetInTouch>Get in Touch!</GetInTouch>
-            <Name type="text" placeholder="Name" name="name" />
-            <Email type="text" placeholder="Email" name="email" />
+            <Name type="text" placeholder="Name" name="name" required />
+            <Email type="text" placeholder="Email" name="email" required />
             <Message
               cols="30"
               rows="8"
               placeholder="Your message"
               name="message"
+              required
             />
+            <SubmitBtn type="submit" value="Get in Touch" />
           </Form>
         </ContactUs>
       </Wrapper>
@@ -56,6 +59,31 @@ const Contact = () => {
 };
 
 const Wrapper = styled.div``;
+
+const SubmitBtn = styled.input`
+  width: 11.5em;
+  height: 2.5em;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  border: solid rgb(230, 57, 70) 1px;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: rgb(230, 57, 70);
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 50%,
+    rgb(230, 57, 70) 50%
+  );
+  transition: all 1s;
+  &:hover {
+    color: white;
+    background-position: -100% 0;
+  }
+  &:focus {
+    border: none;
+  }
+`;
 
 const GetInTouch = styled.p`
   font-size: 3em;
@@ -78,6 +106,9 @@ const Name = styled.input`
     text-align: center;
     font-size: 1.5em;
   }
+  &:focus {
+    border: none;
+  }
 `;
 
 const Email = styled.input`
@@ -94,6 +125,9 @@ const Email = styled.input`
     text-align: center;
     font-size: 1.5em;
   }
+  &:focus {
+    border: none;
+  }
 `;
 
 const Message = styled.textarea`
@@ -103,11 +137,14 @@ const Message = styled.textarea`
   border-radius: 0.7em;
   border: solid white 1px;
   color: white;
-
+  margin-bottom: 2em;
   ::placeholder {
     color: white;
     text-align: center;
     font-size: 1.5em;
+  }
+  &:focus {
+    border: none;
   }
 `;
 
