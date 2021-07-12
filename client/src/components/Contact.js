@@ -113,6 +113,7 @@ const SubmitBtn = styled.input`
 const GetInTouch = styled.p`
   font-size: 3em;
   margin-bottom: 1.5em;
+  margin-top: 2em;
   font-weight: bold;
   color: white;
 `;
@@ -183,7 +184,7 @@ const Form = styled.form`
 const ContactUs = styled.div`
   max-width: 99.999%;
   min-width: 99.999%;
-  height: 80vh;
+  height: 100%;
   background-color: #14213d;
   display: flex;
   align-items: center;

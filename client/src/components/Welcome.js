@@ -44,7 +44,7 @@ const TheWave = styled(Wave)`
 const Wrapper = styled.div`
   min-width: 99.999%;
   max-width: 99.999%;
-  height: 80vh;
+  height: 70vh;
   background-color: #14213d;
   display: flex;
   align-items: center;

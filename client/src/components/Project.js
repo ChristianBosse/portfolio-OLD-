@@ -34,14 +34,14 @@ const Project = () => {
 };
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 100%;
   min-width: 99.999%;
   background-color: white;
 
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1024px) {
     flex-direction: column;
   }
 `;
@@ -52,16 +52,13 @@ const Image = styled.img`
 `;
 
 const ProjectTitle = styled.a`
-  font-size: 2em;
+  font-size: 3.5vh;
   font-weight: bold;
   margin-left: 0.5em;
   color: #14213d;
   display: inline-block;
   margin-bottom: 0.5em;
   text-decoration: none;
-  @media screen and (max-width: 1000px) {
-    font-size: 1.2em;
-  }
   &:hover {
     color: red;
   }
@@ -70,38 +67,47 @@ const ProjectTitle = styled.a`
 const ProjectDesc = styled.p`
   margin-bottom: 2em;
   margin-left: 0.8em;
-  @media screen and (max-width: 1000px) {
-    font-size: 0.8em;
-  }
+  font-size: 2vh;
 `;
 
 const ProjectLang = styled.p`
   color: red;
   margin-left: 0.8em;
-  @media screen and (max-width: 1000px) {
-    font-size: 0.8em;
-  }
+  padding-bottom: 1vh;
+  font-size: 2vh;
 `;
 
 const Text = styled.p`
-  height: 20px;
   background-color: white;
+  margin-bottom: 15vh;
   color: #e63946;
   font-weight: normal;
   text-align: center;
-  font-size: 2.5em;
-  z-index: 2;
+  font-size: 4vh;
 `;
 
 const Card = styled.div`
-  height: 38em;
-  width: 38em;
+  height: 60vh;
+  width: 30vw;
   border: 1px #14213d solid;
   border-bottom: 3px #14213d solid;
   transition-duration: 0.5s;
+  margin-bottom: 20vh;
 
   &:hover {
     transform: scale(1.05);
+  }
+  @media screen and (max-width: 1366px) {
+    width: 40vw;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 60vw;
+  }
+  @media screen and (max-width: 764px) {
+    width: 75vw;
+  }
+  @media screen and (max-width: 500px) {
+    width: 90vw;
   }
 `;
 
