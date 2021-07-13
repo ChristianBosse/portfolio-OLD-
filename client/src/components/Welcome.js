@@ -21,6 +21,7 @@ const Welcome = () => {
       </Wrapper>
       <TheWave
         fill="#14213d"
+        id="project"
         paused={false}
         options={{
           height: 30,

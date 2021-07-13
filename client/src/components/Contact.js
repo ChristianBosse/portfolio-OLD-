@@ -43,6 +43,7 @@ const Contact = () => {
     <>
       <TheWave
         fill="#14213d"
+        id="contact"
         paused={false}
         options={{
           height: 30,

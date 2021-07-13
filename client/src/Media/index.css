@@ -92,3 +92,12 @@ video {
   display: inline-block;
   width: 0;
 }
+
+.LinkHover {
+  color: white;
+  margin: 0vh 2vh 0vh 2vh;
+}
+.LinkHover:hover {
+  color: rgb(230, 57, 70);
+  cursor: pointer;
+}
